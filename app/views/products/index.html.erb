@@ -3,12 +3,17 @@
 <h1>Products</h1>
 
 <div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
-  <% end %>
+  <ol>
+    <% @products.each do |product| %>
+      <li><%= render product %></li>
+      <p>
+        <%= link_to "[View #{product.name}]", product %>
+      </p>
+
+    <% end %>
+  </ol>
 </div>
 
-<%= link_to "New product", new_product_path %>
+<footer>
+  <b><%= link_to "Add New Product", new_product_path %></b>
+</footer>
